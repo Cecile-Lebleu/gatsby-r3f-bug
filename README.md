@@ -1,3 +1,10 @@
+# Problem description:
+
+When creating a ScreenQuad (or any other attempt at a plane that fills the screen), the plane shows up smaller in the screen. With ScreenQuad, it shows up as a triangle in the middle of the screen:
+![Screenshot 2022-12-06 at 3 50 10 PM](https://user-images.githubusercontent.com/22694361/206030621-027a7956-ad51-4ed7-b2d6-ab0ea966079f.png)
+
+I previously tried with an `<OrthographicCamera left={-1} right={1} top={1} bottom={-1} near={0} far={1} />` with a `<planeGeometry args={[2, 2]} />` based on [this answer](https://stackoverflow.com/a/63873117), but it showed up as a small square in the middle of the screen.
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
