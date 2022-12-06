@@ -13,9 +13,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-three/drei": "^9.46.2",
+    "@react-three/fiber": "^8.9.1",
+    "babel-plugin-glsl": "^1.0.0",
     "gatsby": "^5.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.147.0"
   },
   "repository": {
     "type": "git",
