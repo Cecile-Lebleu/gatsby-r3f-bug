@@ -1,9 +1,42 @@
-# Problem description:
+## Problem description:
 
-When creating a ScreenQuad (or any other attempt at a plane that fills the screen), the plane shows up smaller in the screen. With ScreenQuad, it shows up as a triangle in the middle of the screen:
-![Screenshot 2022-12-06 at 3 50 10 PM](https://user-images.githubusercontent.com/22694361/206030621-027a7956-ad51-4ed7-b2d6-ab0ea966079f.png)
+I'm trying to add a 3D effect on a plane in a Gatsby site. But I haven't been able to create a plane that fills the camera, like in all the Three.js shader or post-processing examples.
 
-I previously tried with an `<OrthographicCamera left={-1} right={1} top={1} bottom={-1} near={0} far={1} />` with a `<planeGeometry args={[2, 2]} />` based on [this answer](https://stackoverflow.com/a/63873117), but it showed up as a small square in the middle of the screen.
+I have tried using an Orthographic Camera + plane, based on [this answer](https://stackoverflow.com/a/63873117), like so:
+
+``` js
+<Canvas>
+  <OrthographicCamera left={-1} right={1} top={1} bottom={-1} near={0} far={1} />
+    <planeGeometry args={[2, 2]} />
+  </OrthographicCamera>
+</Canvas>
+```
+But this results in a small square in the middle of the canvas.
+[![a small square in the middle of the canvas](https://i.stack.imgur.com/eLM94.png)](https://i.stack.imgur.com/eLM94.png)
+
+I also tried using a ScreenQuad, like so:
+
+``` js
+<Canvas style={{width: '100vw', height: '100vh'}}>
+  <ScreenQuad />
+</Canvas>
+```
+But this results in a triangle in the middle of the canvas.
+
+[![a triangle in the middle of the canvas](https://i.stack.imgur.com/xMqWF.png)](https://i.stack.imgur.com/xMqWF.png)
+
+I can only cover the Canvas by blowing up the size of the plane, but it's not a good solution: the effect looks giant on small screens and still cropped on larger screens.
+
+What's going on? How can I make a simple plane that covers the camera regardless of Canvas size?
+
+## To run this example:
+
+```
+git clone https://github.com/Cecile-Lebleu/gatsby-r3f-bug.git
+cd gatsby-r3f-bug
+npm i
+gatsby develop
+```
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
